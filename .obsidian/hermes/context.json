@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "source": "lean-obsidian-terminal",
+  "vaultPath": "/Users/mac/Documents/Obsidian Vault",
+  "bridgePath": "/Users/mac/Documents/Obsidian Vault/.obsidian/hermes/context.json",
+  "updatedAt": "2026-08-28T06:04:40.634Z",
+  "updateTimestamp": 1787897080634,
+  "submitSequence": 19,
+  "attach": {
+    "enabled": false
+  },
+  "terminal": {
+    "id": "terminal-2",
+    "title": "Hermes 1"
+  },
+  "context": null
+}

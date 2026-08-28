@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+body { font-family: -apple-system, 'PingFang SC', sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; background: #f8f9fa; }
+h1 { font-size: 22px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+.sub { font-size: 14px; color: #64748B; margin-bottom: 32px; }
+.card { background: #fff; border: 1px solid #E2E8F0; border-radius: 6px; margin-bottom: 20px; padding: 20px 24px; }
+.card h2 { font-size: 15px; font-weight: 700; color: #0F172A; margin: 0 0 12px; display: flex; align-items: center; gap: 8px; }
+.badge { display: inline-block; background: #0F172A; color: #fff; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; letter-spacing: 0.5px; }
+.badge.blue { background: #38BDF8; }
+.badge.amber { background: #F59E0B; color: #0F172A; }
+.badge.green { background: #10B981; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; padding: 8px 10px; background: #F1F5F9; color: #64748B; font-weight: 600; font-size: 11px; letter-spacing: 0.5px; border-bottom: 2px solid #E2E8F0; }
+td { padding: 10px; border-bottom: 1px solid #E2E8F0; color: #334155; vertical-align: top; line-height: 1.6; }
+tr:hover td { background: #FAFAFA; }
+.code { font-family: 'SF Mono', Consolas, monospace; font-size: 12px; background: #F1F5F9; padding: 1px 5px; border-radius: 3px; color: #0F172A; }
+.section-title { font-size: 13px; font-weight: 700; color: #0F172A; margin: 24px 0 12px; padding-left: 10px; border-left: 3px solid #38BDF8; }
+</style>
+</head>
+<body>
+
+<h1>gzh-design Skill 参数拆解</h1>
+<p class="sub">来源：SKILL.md + references/（theme-index, common-components, theme-bloom-blue）</p>
+
+<!-- ==================== 第一部分：参数组件 ==================== -->
+<div class="section-title">一、参数组件（可调/可选，排版时的决策变量）</div>
+
+<div class="card">
+<h2><span class="badge blue">P1</span> 主题选择参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：SKILL.md 章节「选主题」</p>
+<table>
+<tr><th style="width:120px">参数</th><th>可选值</th><th>默认值</th><th>决策依据</th></tr>
+<tr><td><span class="code">theme</span></td><td>moyu-green / red-white / graphite-minimal / zen-whitespace / moyu-ticket / olive-journal / bloom-blue（飞叔）</td><td>moyu-green（自动推首推）</td><td>文章题材匹配（教程→摸鱼绿、观点→红白、科技→冰蓝、总结/禅意→留白）</td></tr>
+<tr><td><span class="code">theme_mode</span></td><td>confirm（推荐询问）/ auto（一键直排）/ select（看全部列表）</td><td>confirm</td><td>用户请求里给了主题→直接用；全自动模式→不询问</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P2</span> 文章结构参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：SKILL.md 章节「解析Markdown结构」「文章类型→组件组合配方」</p>
+<table>
+<tr><th style="width:120px">参数</th><th>可选值</th><th>默认值</th><th>决策依据</th></tr>
+<tr><td><span class="code">article_type</span></td><td>观点分析 / 教程指南 / 盘点清单 / 数据复盘 / 访谈特稿 / 经验随笔</td><td>观点分析</td><td>步骤和命令多→教程；并列条目多→盘点；数字对比多→数据；论证推演多→观点</td></tr>
+<tr><td><span class="code">core_components</span></td><td>正文6 + 金句8 + 居中金句10 / STEP14 + 有序列表13 + 代码块16 / …</td><td>按文章类型取配方表</td><td>配方表决定哪些组件是必选的「核心组件组合」</td></tr>
+<tr><td><span class="code">accent_components</span></td><td>浅底引用9 / 深蓝竖条11 / 冰蓝线框12 / 图片15 …</td><td>按文章类型取配方表</td><td>配方表决定哪些是可选的「点缀组件」</td></tr>
+<tr><td><span class="code">highlight_count</span></td><td>≤3个锚点处</td><td>全文≤3处</td><td>琥珀黄点睛（F59E0B）的全篇配额，用于最关键锚点</td></tr>
+<tr><td><span class="code">underline_terms</span></td><td>每段1-3个关键短语</td><td>每段必标</td><td>按语义识别：核心观点、关键数据、专有名词；15字以内</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P3</span> 封面参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件库封面刊头（组件2）</p>
+<table>
+<tr><th style="width:120px">参数</th><th>说明</th><th>来源</th></tr>
+<tr><td><span class="code">cover_masthead</span></td><td>栏目标签（如「投资思考」「AI实操」）</td><td>文章分类推断</td></tr>
+<tr><td><span class="code">cover_issue</span></td><td>期号（如「第XX期」）</td><td>可选，用占位符</td></tr>
+<tr><td><span class="code">cover_date</span></td><td>发布日期</td><td>用户提供</td></tr>
+<tr><td><span class="code">cover_tagline</span></td><td>封面底部摘要文字</td><td>文章开头引言 或 本文看点浓缩</td></tr>
+<tr><td><span class="code">cover_label</span></td><td>封面右下角标签（如 INVESTMENT）</td><td>article_type 映射</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P4</span> 目录/看点参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件3 本文看点</p>
+<table>
+<tr><th style="width:120px">参数</th><th>条件</th><th>取值规则</th></tr>
+<tr><td><span class="code">has_toc</span></td><td>章节数≥3</td><td>生成组件3；<3章不生成</td></tr>
+<tr><td><span class="code">toc_items</span></td><td>3个</td><td>从各章节标题精炼，不是完整列表，是最值得看的3个点</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P5</span> 章节标题参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件4 章节标题 + 组件5 小节标题</p>
+<table>
+<tr><th style="width:120px">参数</th><th>说明</th><th>生成规则</th></tr>
+<tr><td><span class="code">chapter_number</span></td><td>章节编号 01/02/03…</td><td>按 `##` 出现顺序自动编号</td></tr>
+<tr><td><span class="code">chapter_english</span></td><td>英文标签（实测→TEST、教程→TUTORIAL、总结→SUMMARY）</td><td>中文标题语义→映射英文标签</td></tr>
+<tr><td><span class="code">chapter_title_zh</span></td><td>中文章节标题原文</td><td>取自 `## 标题`</td></tr>
+<tr><td><span class="code">is_conclusion</span></td><td>最后一章是否为结语</td><td>若末章标题含「结语/总结/写在最后」→编号变体 `∞`</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P6</span> 引用块参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件8 冰蓝竖条金句 / 组件9 浅底引用 / 组件11 深蓝竖条提示</p>
+<table>
+<tr><th style="width:120px">参数</th><th style="width:100px">可选值</th><th>选择逻辑</th></tr>
+<tr><td><span class="code">quote_type</span></td><td>golden（金句）/ reference（引用）/ highlight（深蓝强调）</td><td>文章开头金句→golden；`>`内容引用→reference；核心结论→highlight</td></tr>
+<tr><td><span class="code">quote_author</span></td><td>署名字符串（可选）</td><td>金句有出处时标注，无则不标</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P7</span> 签名区参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件19 作者签名 + 组件20 结尾行动区</p>
+<table>
+<tr><th style="width:120px">参数</th><th>说明</th><th>取值规则</th></tr>
+<tr><td><span class="code">author_name</span></td><td>作者署名</td><td>飞叔 / 用户请求中署名 / 保留下钻占位</td></tr>
+<tr><td><span class="code">author_bio</span></td><td>一句话简介</td><td>飞叔→「一个搞了20年IT的AI实践者」</td></tr>
+<tr><td><span class="code">has_cta</span></td><td>是否生成结尾行动区</td><td>默认生成；若文章官方已有CTA，合并到唯一一处</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P8</span> 代码块参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：通用增量库组件 1a/1b + 主题库组件16</p>
+<table>
+<tr><th style="width:120px">参数</th><th>可选值</th><th>默认值</th></tr>
+<tr><td><span class="code">code_style</span></td><td>dark（深色底）/ light（浅色底）</td><td>dark（优先主题库16）</td></tr>
+<tr><td><span class="code">code_language</span></td><td>语言标识字符串</td><td>自动推断（CODE/PROMPT/BASH/JSON等）</td></tr>
+<tr><td><span class="code">code_line_spacing</span></td><td>1.6（紧凑）</td><td>1.6</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge blue">P9</span> 图片参数</h2>
+<p style="font-size:13px;color:#64748B;margin:0 0 12px;">来源：组件15 图片容器 + 通用库 2a/2b</p>
+<table>
+<tr><th style="width:120px">参数</th><th>规约</th></tr>
+<tr><td><span class="code">image_caption</span></td><td>只有 `![说明](url)` 里真正有说明文字时才生成说明组件；空alt不编造</td></tr>
+<tr><td><span class="code">image_width</span></td><td>常规图 `max-width:100%`，不 `width:100%`（防小图拉伸）；流程图/封面卡 `width:100%`</td></tr>
+</table>
+</div>
+
+<!-- ==================== 第二部分：校验组件 ==================== -->
+<div class="section-title">二、校验组件（排版质量的硬约束）</div>
+
+<div class="card">
+<h2><span class="badge amber">C1</span> 平台禁用检查（validate_gzh_html.py）</h2>
+<table>
+<tr><th style="width:160px">检查项</th><th>规则</th><th>错误级别</th></tr>
+<tr><td><span class="code">&lt;style&gt;</span></td><td>不得出现任何 style 块</td><td>ERROR</td></tr>
+<tr><td><span class="code">&lt;script&gt;</span></td><td>不得出现任何 script 块</td><td>ERROR</td></tr>
+<tr><td><span class="code">&lt;div&gt;</span></td><td>不得使用 div 标签</td><td>ERROR</td></tr>
+<tr><td><span class="code">class / id</span></td><td>不得使用 class 或 id 属性</td><td>ERROR</td></tr>
+<tr><td><span class="code">position:fixed</span></td><td>不得使用 fixed/absolute/sticky</td><td>ERROR</td></tr>
+<tr><td><span class="code">float</span></td><td>不得使用 float</td><td>ERROR</td></tr>
+<tr><td><span class="code">@media / @keyframes</span></td><td>不得使用媒体查询或动画</td><td>ERROR</td></tr>
+<tr><td><span class="code">display:grid</span></td><td>不得使用 grid 布局</td><td>ERROR</td></tr>
+<tr><td><span class="code">CSS var / 外部字体</span></td><td>不得使用 CSS 变量或引用外部/CND 字体</td><td>ERROR</td></tr>
+<tr><td><span class="code">半角标点（WARNING）</span></td><td>正文中不得出现半角 , . ! ? : ; 和英文直引号 " '</td><td>WARNING（但必须修复到0才能交付）</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge amber">C2</span> 样式强制检查</h2>
+<table>
+<tr><th style="width:160px">检查项</th><th>规则</th></tr>
+<tr><td><span class="code">&lt;span leaf&gt;</span></td><td>所有文字节点必须用 <span leaf="">...</span> 包裹，否则粘贴后样式丢失</td></tr>
+<tr><td><span class="code">内联样式</span></td><td>所有样式必须用 style="" 内联，不可引用外部或嵌入式 CSS</td></tr>
+<tr><td><span class="code">display:flex</span></td><td>有限可用（三列看点卡、列表项等），不得滥用</td></tr>
+<tr><td><span class="code">linear-gradient</span></td><td>可用（荧光笔组件）</td></tr>
+<tr><td><span class="code">border-radius / box-shadow</span></td><td>可用</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge amber">C3</span> 组件合规检查（component_lint.py）</h2>
+<table>
+<tr><th style="width:160px">检查项</th><th>说明</th></tr>
+<tr><td><span class="code">全站覆盖率</span></td><td>每个主题组件库必须包含五章节：设计变量速查表、各组件完整HTML、完整文章模板骨架、文章类型配方表、Markdown映射规则表</td></tr>
+<tr><td><span class="code">反模式扫描</span></td><td>检查组件库中是否混入 class/id/style块/div/半角标点等平台禁用项</td></tr>
+<tr><td><span class="code">theme-index完整性</span></td><td>theme-index.md 每一行必须有：主题名 / 主色 / 适用场景 / 组件库文件 / 正文下划线CSS，缺一不可</td></tr>
+</table>
+</div>
+
+<div class="card">
+<h2><span class="badge amber">C4</span> 内容质量检查（排版过程中的人工决策）</h2>
+<table>
+<tr><th style="width:160px">检查项</th><th>规则</th></tr>
+<tr><td><span class="code">锚点层不超过5处</span></td><td>全文最强强调（琥珀黄/冰蓝线框提示/深蓝竖条提示）合计≤5处</td></tr>
+<tr><td><span class="code">下划线不漏段</span></td><td>每个正文段落必须标记1-3个关键短语，不能有段标有的段漏</td></tr>
+<tr><td><span class="code">目录是精选不是全量</span></td><td>本文看点展示3个核心要点，章节多于3个时挑最重要的3个</td></tr>
+<tr><td><span class="code">不跨主题混用</span></td><td>一篇文章只用所选主题+通用库的组件，不从其他主题借组件</td></tr>
+<tr><td><span class="code">签名区唯一</span></td><td>全文只有末尾一个签名区；原文末尾自带签名的，合并进去</td></tr>
+<tr><td><span class="code">不编造图片说明</span></td><td>空alt的图片不生成说明组件</td></tr>
+<tr><td><span class="code">封面占位图不留</span></td><td>签名区/CTA组件里若带名片图占位，没有真实图片URL时整行删掉</td></tr>
+<tr><td><span class="code">代码块紧凑</span></td><td>每行 p style="margin:0"；不用 white-space:pre；缩进用全角空格</td></tr>
+</table>
+</div>
+
+</body>
+</html>

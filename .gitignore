@@ -1,0 +1,26 @@
+# Obsidian
+.obsidian/workspace.json
+.obsidian/workspaces.json
+.obsidian/plugins/*/data.json
+.obsidian/cache
+.trash/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editor backups
+*.swp
+*.bak
+*~
+
+# Node / Python artifacts
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+env/
+
+# Backups
+Obsidian Vault备份-*
