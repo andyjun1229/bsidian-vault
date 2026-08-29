@@ -1,13 +1,15 @@
 """
 从 you/ 的 frontmatter 自动生成 outputs/__catalog.md 目录文件。
 只读取 frontmatter，不读正文，速度很快。
+递归扫描 you/ 及其子目录（如 you/灵感/），跳过 _ 开头的文件和隐藏目录。
 
-用法: python3 ~/Documents/Obsidian\ Vault/scripts/gen_catalog.py
+用法: python3 ~/Documents/bsidian-vault/scripts/gen_catalog.py
 """
 
-import os, re
+import os
+import datetime
 
-VAULT = os.path.expanduser("~/Documents/Obsidian Vault")
+VAULT = os.path.expanduser("~/Documents/bsidian-vault")
 YOU_DIR = os.path.join(VAULT, "you")
 OUTPUTS_DIR = os.path.join(VAULT, "outputs")
 CATALOG = os.path.join(OUTPUTS_DIR, "__catalog.md")
@@ -50,30 +52,33 @@ def get_first_heading(body):
 
 entries = []
 
-for filename in sorted(os.listdir(YOU_DIR)):
-    if not filename.endswith(".md"):
-        continue
+for root, dirs, files in os.walk(YOU_DIR):
+    dirs[:] = sorted(d for d in dirs if not d.startswith("."))
+    for filename in sorted(files):
+        if not filename.endswith(".md") or filename.startswith("_"):
+            continue
 
-    path = os.path.join(YOU_DIR, filename)
-    fm, body = read_frontmatter(path)
-    title = get_first_heading(body) or filename.replace(".md", "")
+        path = os.path.join(root, filename)
+        rel = os.path.relpath(path, VAULT)  # 例: you/灵感/xxx.md
+        fm, body = read_frontmatter(path)
+        title = get_first_heading(body) or filename.replace(".md", "")
 
-    filetype = fm.get("type", "?")
-    status = fm.get("status", "?")
+        filetype = fm.get("type", "?")
+        status = fm.get("status", "?")
 
-    # Status indicator
-    if status == "evergreen":
-        status_icon = "🌲"
-    elif status == "growing":
-        status_icon = "🌱"
-    elif status == "sprouting":
-        status_icon = "🌰"
-    elif status == "stale":
-        status_icon = "🥀"
-    else:
-        status_icon = "❓"
+        # Status indicator
+        if status == "evergreen":
+            status_icon = "🌲"
+        elif status == "growing":
+            status_icon = "🌱"
+        elif status == "sprouting":
+            status_icon = "🌰"
+        elif status == "stale":
+            status_icon = "🥀"
+        else:
+            status_icon = "❓"
 
-    entries.append((filetype, status, status_icon, title, filename))
+        entries.append((filetype, status, status_icon, title, rel))
 
 # Group by type
 type_order = ["article", "method", "experience", "note", "prd", "story", "archive", "draft"]
@@ -90,8 +95,8 @@ type_labels = {
 
 lines = []
 lines.append("---")
-lines.append("自动生成时间: " + __import__("datetime").datetime.now().strftime("%Y-%m-%d %H:%M"))
-lines.append("来源: you/ 目录 frontmatter")
+lines.append("自动生成时间: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M"))
+lines.append("来源: you/ 目录 frontmatter（含子目录）")
 lines.append("---")
 lines.append("")
 lines.append("# 📚 知识库总目录")
@@ -106,8 +111,8 @@ for t in type_order:
     label = type_labels.get(t, t)
     lines.append(f"## {label} ({len(group)})")
     lines.append("")
-    for _, status, icon, title, filename in group:
-        link = f"[[you/{filename}]]"
+    for _, status, icon, title, rel in group:
+        link = f"[[{rel}]]"
         lines.append(f"- {icon} {link} — {title}" if status != "growing" else f"- {icon} {link}")
     lines.append("")
 
@@ -116,8 +121,8 @@ unknown = [e for e in entries if e[0] not in type_order]
 if unknown:
     lines.append(f"## 未分类 ({len(unknown)})")
     lines.append("")
-    for _, status, icon, title, filename in unknown:
-        lines.append(f"- {icon} [[you/{filename}]]")
+    for _, status, icon, title, rel in unknown:
+        lines.append(f"- {icon} [[{rel}]]")
     lines.append("")
 
 
