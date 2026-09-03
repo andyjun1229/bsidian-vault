@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google 发布 WikiSkill：我对照了一遍自己的知识库 · 飞叔AI沉思录</title>
+</head>
+<body style="margin:0;padding:24px 0;background:#F1F5F9;">
+<!-- 预览外壳：发布时只复制 <section class="gzh-body"> 内部内容到公众号编辑器 -->
+
+<section class="gzh-body" style="max-width:677px;margin:0 auto;padding:8px;box-sizing:border-box;background:#FFFFFF;color:#334155;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;line-height:1.8;letter-spacing:0.2px;">
+
+  <!-- ===== 头图卡片 ===== -->
+  <section style="margin:0 0 36px;border-radius:2px;overflow:hidden;">
+    <section style="background:#0F172A;padding:32px 24px 24px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:3px;color:#38BDF8;"><span leaf="">飞叔AI沉思录</span></span>
+        <span style="flex:1;height:1px;background:#1E293B;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;font-weight:500;"><span leaf="">2026-08-30</span></span>
+      </section>
+      <p style="margin:0 0 16px;font-size:25px;font-weight:800;color:#FFFFFF;line-height:1.35;letter-spacing:0.5px;"><span leaf="">Google 发布 WikiSkill：我对照了一遍自己的知识库，发现我早就在这么干了</span></p>
+      <section style="height:1px;background:#1E293B;margin:0 0 14px;"><span leaf=""><br></span></section>
+      <section style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+        <p style="margin:0;font-size:11px;color:#94A3B8;"><span leaf="">论文没写的实操细节，我都踩了一遍坑补齐了</span></p>
+        <span style="display:inline-block;background:#1E293B;color:#38BDF8;padding:2px 8px;border-radius:2px;font-size:9px;font-weight:700;letter-spacing:1px;"><span leaf="">AI · Skill设计</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- ===== 本文看点 ===== -->
+  <section style="padding:0 10px;margin:0 0 36px;">
+    <p style="font-size:10px;color:#64748B;margin:0 0 14px;letter-spacing:2px;font-weight:600;"><span leaf="">本文看点</span></p>
+    <section style="display:flex;gap:8px;">
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">WikiSkill 三层架构：经验、知识、技能分开</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">论文没写的实操细节：本地真搭了一遍的坑</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">个人知识库×行动熔炉：同一张图，东西两边</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- ===== 3 PARTS · CONTENT MAP（横滑三方块，甲木样式 × bloom-blue）===== -->
+  <section style="padding:0 10px;margin:0 0 36px;">
+    <section style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0 0 12px;">
+      <p style="margin:0;font-size:10px;color:#64748B;letter-spacing:2px;font-weight:600;"><span leaf="">3 PARTS · CONTENT MAP</span></p>
+      <p style="margin:0;font-size:10px;color:#94A3B8;"><span leaf="">左右滑动</span></p>
+    </section>
+    <section style="width:100%;box-sizing:border-box;overflow:auto hidden;white-space:nowrap;padding:0 0 9px;">
+      <section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0 8px 0 0;border-radius:12px;background:linear-gradient(135deg,#0F172A,#1E293B);border:1px solid #0F172A;box-shadow:0 5px 12px rgba(15,23,42,0.25);">
+        <p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#38BDF8;font-weight:800;letter-spacing:1px;"><span leaf="">PART 01</span></p>
+        <p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#FFFFFF;font-weight:900;"><span leaf="">论文核心</span></p>
+        <p style="margin:0;font-size:10px;line-height:1.35;color:#94A3B8;"><span leaf="">三层架构 · 9B 胜 27B</span></p>
+      </section>
+      <section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0 8px 0 0;border-radius:12px;background:#FFFFFF;border:1px solid #E2E8F0;box-shadow:0 2px 7px rgba(15,23,42,0.04);">
+        <p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#94A3B8;font-weight:800;letter-spacing:1px;"><span leaf="">PART 02</span></p>
+        <p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#0F172A;font-weight:900;"><span leaf="">落地实操</span></p>
+        <p style="margin:0;font-size:10px;line-height:1.35;color:#64748B;"><span leaf="">硬模板 · PURPOSE.md</span></p>
+      </section>
+      <section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0;border-radius:12px;background:#FFFFFF;border:1px solid #E2E8F0;box-shadow:0 2px 7px rgba(15,23,42,0.04);">
+        <p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#94A3B8;font-weight:800;letter-spacing:1px;"><span leaf="">PART 03</span></p>
+        <p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#0F172A;font-weight:900;"><span leaf="">更大的图景</span></p>
+        <p style="margin:0;font-size:10px;line-height:1.35;color:#64748B;"><span leaf="">知识库 × 行动熔炉</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- ===== 开篇 ===== -->
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">前天 Google Research 发了篇论文，讲怎么让 Agent 的技能自己进化。我一开始以为是又一篇「用 AI 优化 AI」的论文，读到最后发现：</span><span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">它画的架构图，和我自己折腾了半年的知识库，几乎一模一样。</span></span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">这篇文章我做两件事：一是把论文里没写的实操细节补上（我把三层架构在本地真搭了一遍）；二是聊聊为什么我认为这套架构验证的是一件比「技能进化」更大的事。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">论文在这：</span><span style="background:#F1F5F9;color:#0F172A;padding:2px 6px;border-radius:4px;font-weight:600;"><span leaf="">arxiv.org/abs/2608.27454</span></span></p>
+
+  <!-- ===== 01 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第1章 · WHAT IT SAYS</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">WikiSkill 说了什么</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">一句话：</span><strong style="color:#0F172A;"><span leaf="">把经验、知识、技能分成三层，让技能从知识里生长出来。</span></strong></p>
+
+  <section style="margin:0 10px 22px;padding:18px 16px;background:#0F172A;border-radius:4px;">
+    <p style="margin:0;font-size:13px;line-height:2;color:#E2E8F0;font-family:'SF Mono',Menlo,Consolas,monospace;">
+      <span leaf="">第一层 Raw Layer&nbsp;&nbsp;&nbsp;—— 原始轨迹（不可变，事实依据）</span><br>
+      <span leaf="">第二层 Wiki Layer&nbsp;&nbsp;—— 结构化知识（核心层，永不回滚）</span><br>
+      <span leaf="">第三层 Skills Layer —— 可执行技能（带溯源）</span>
+    </p>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">以前的技能进化方法（EvoSkill、Trace2Skill 这些），分析完执行轨迹就直接改 Skill。</span><strong style="color:#0F172A;"><span leaf="">经验用一次就丢。</span></strong><span leaf="">WikiSkill 在中间加了一层持久知识库。每轮迭代四步：跑任务产轨迹 → Wiki 维护者做根因分析沉淀成知识 → 提案者从知识里生成技能更新 → 验证不通过就回滚（但 Wiki 保留）。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">关键设计有两个。</span><strong style="color:#0F172A;"><span leaf="">Wiki 永不回滚</span></strong><span leaf="">：技能被拒了，技能回退，但「上次为什么被拒」留在知识库里，下一轮提案者看得到，不重复踩坑。</span><strong style="color:#0F172A;"><span leaf="">知识和技能分离</span></strong><span leaf="">：知识回答「我们知道什么」，技能回答「我们怎么做」——每个技能都带一份 PURPOSE.md，记录它是为了解决哪个知识模式而生的。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">效果一句话：</span><span style="background:#FDE68A;padding:0 4px;border-radius:2px;font-weight:700;color:#0F172A;"><span leaf="">9B 的模型装上这套架构，跑赢了 27B 的裸模型</span></span><span leaf="">（47.4% vs 39.4%）。去掉知识层，成绩掉 15 个百分点。</span></p>
+
+  <!-- ===== 02 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第2章 · HANDS ON</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">论文没写的部分：这套架构怎么落地</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">论文的架构图很漂亮，但你真要动手时会发现一堆没说的事。我花了半天在本地搭了一遍（用的就是我的知识库和 Hermes），把坑都踩了，直接给你可操作的版本。</span></p>
+
+  <p style="margin:0px 10px 6px;font-size:16px;font-weight:800;color:#0F172A;letter-spacing:0.3px;"><span leaf="">Raw Layer：论文说「不可变」，实操是「只进不改」</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">论文没说原始轨迹存什么格式。实操经验：一次任务一个文件，别把多个任务塞一个日志。文件头写清楚：时间、任务、用的哪个版本的 Skill、成功还是失败。「不可变」的正确实现是目录权限，不是靠自觉——</span><span style="background:#F1F5F9;color:#0F172A;padding:2px 6px;border-radius:4px;font-weight:600;"><span leaf="">chmod -R a-w raw/</span></span><span leaf="">，或者每次跑完直接 git commit，git 天然不可变，还能 diff。轨迹要含失败过程：最值钱的不是成功轨迹，是「我以为会成功但失败了」的那段。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">一个真实教训：我早期收素材时把网页正文「精简」后入库，后来想回溯当时页面长什么样，找不回来了。Raw 层的纪律就一条：</span><strong style="color:#0F172A;"><span leaf="">忍住别加工。</span></strong></p>
+
+  <p style="margin:0px 10px 6px;font-size:16px;font-weight:800;color:#0F172A;letter-spacing:0.3px;"><span leaf="">Wiki Layer：「一模式一文件 + 硬模板」</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">这是核心层，也是最容易做成垃圾场的一层。pattern 文件必须有硬模板——没有模板的 Wiki 会退化成心情日记。</span><strong style="color:#0F172A;"><span leaf="">模板的作用是逼着编译过程做根因分析，而不是复述现象。</span></strong><span leaf="">我的模板四个字段：现象（什么情况触发，具体到任务类型）、根因（分析到机制层，不停在表面）、修复方案（可执行步骤，最好带代码）、关联（相关 pattern + 源头轨迹链接）。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">第二，skill-impact.md 是整个系统的审计日志，必须记 diff。Agent 提案的技能改动，人是要抽查的——没有 diff，你无法判断「这个技能进化得越来越强」还是「进化得越来越会迎合验证集」。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">第三，「永不回滚」要有垃圾处理机制。知识只进不出，半年就是噪音场。我的做法：30 天没被任何提案引用、且出现次数没增长的 pattern，标记 stale 不删除，移到 archive/。</span><strong style="color:#0F172A;"><span leaf="">知识会过时，旧观点和新观点要能区分。</span></strong></p>
+
+  <p style="margin:0px 10px 6px;font-size:16px;font-weight:800;color:#0F172A;letter-spacing:0.3px;"><span leaf="">Skills Layer：PURPOSE.md 是最妙的文件</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">论文对这个文件一笔带过，但它是三层架构能自洽的关键。我给自己的每个 Skill 都补了 PURPOSE.md，除了记录「为解决哪个 pattern 而生」和设计意图，还加了一节</span><strong style="color:#0F172A;"><span leaf="">「禁止的改动」</span></strong><span leaf="">：哪些看似合理的修改会破坏设计意图。这是实战出来的——Agent 提案的技能修改经常在技术上「更优」，但会破坏当初的约束。把负面清单写下来，提案者就不用重新踩一遍设计者踩过的坑。</span></p>
+
+  <p style="margin:0px 10px 6px;font-size:16px;font-weight:800;color:#0F172A;letter-spacing:0.3px;"><span leaf="">进化循环：论文四步，我加第五步</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">论文循环：跑轨迹 → 维护知识 → 提案技能 → 门控验证。我加的是</span><span style="background:#FDE68A;padding:0 4px;border-radius:2px;font-weight:700;color:#0F172A;"><span leaf="">每 N 轮人工抽查一次</span></span><span leaf="">。理由很简单——门控验证只能证明「技能在验证集上分数变高了」，证明不了「技能变得更好」。一个只优化分数的系统，最终会优化出你没想到的投机方式。这不是假设，就在几天前，OpenAI 那 700 个 Agent 已经演示过一遍了：它们花大量精力研究「怎么骗过想象中的监考官」，就因为奖励只看结果。</span></p>
+
+  <!-- ===== 03 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第3章 · BIGGER PICTURE</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">为什么我说这件事比「技能进化」大</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">这套架构，本质上是给「经验」建了一个资产负债表。</span></strong><span leaf="">Raw Layer 是原始凭证，Wiki Layer 是账本，Skills Layer 是根据账本做出的经营决策。以前的方法只留决策不留账本——账本丢了，决策就变成拍脑袋。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">我为什么读到这篇会激动？因为我自己的知识库（raw/ → you/ → outputs/ 三层）就是这个结构：raw/ 只进不改，对应 Raw Layer 的不可变；you/ 知识持续积累，对应 Wiki Layer 的永不回滚；outputs/ 索引卡片带背景，对应 Skills Layer 的可溯源。连「听了就用 → 记一条 experience → 复盘」的工作流，都是同一个「经验→知识→行动」的闭环。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">Karpathy 讲 LLM Wiki，讲的是个人知识管理；Google 发 WikiSkill，讲的是 Agent 技能进化。</span><span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">两边画的是同一张图：智能的持续提升，靠的不是更大的脑子，而是「经验→知识→行动」这个循环转得有多好。</span></span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">这其实就是王阳明那句「知是行之始，行是知之成」的工程版。我的行动熔炉理论说：把模糊认知写成可执行规则，跑一遍，暴露漏洞，迭代。WikiSkill 做的事一模一样——只不过熔炉里炼的是 Agent 的技能，炼炉边上站着的换成了三个专门干活的 Agent。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">7 年投资、半年知识库、几个月 Agent 实操，在这篇论文里汇合了。</span></strong><span leaf="">这大概就是知识库的好处：你读过的东西不会丢，它们会等着某一天互相认亲。</span></p>
+
+  <!-- ===== 04 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第4章 · ACTION LIST</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">给三类读者的行动清单</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">做 Agent 开发的：</span></strong><span leaf="">别再裸调 prompt 了。三层架构成本不高——git + markdown 就能搭。优先建 skill-impact.md（审计日志），它最便宜也最保值。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">玩个人知识库的：</span></strong><span leaf="">检查你的库有没有「Raw 层」。只有收藏没有原始出处和日期的库，等于只有账本没有凭证，三个月后就说不清「我当时为什么觉得这个有用」。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">做自媒体的：</span></strong><span leaf="">这篇本身就是选题示范——论文（外部素材）+ 自建对照（个人实操）+ 哲学连接（知行合一）= 一篇有信息增量又不干巴的文章。素材是别人的，认知是自己的。</span></p>
+
+  <!-- ===== 参考资料 ===== -->
+  <section style="margin:0 10px 28px;padding:16px;background:#FAFAFA;border:1px solid #E2E8F0;border-radius:2px;">
+    <p style="margin:0 0 8px;font-size:11px;font-weight:700;color:#64748B;letter-spacing:1px;"><span leaf="">参考资料</span></p>
+    <p style="margin:0 0 4px;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">1. WikiSkill 论文：arxiv.org/abs/2608.27454（Google Research）</span></p>
+    <p style="margin:0 0 4px;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">2. Datawhale 公众号解读（原文）</span></p>
+    <p style="margin:0;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">3. 飞叔知识库实操记录与行动熔炉理论</span></p>
+  </section>
+
+  <!-- ===== 作者寄语 ===== -->
+  <section style="padding:0 10px 24px;">
+    <section style="border-top:1px solid #E2E8F0;padding-top:24px;">
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.8;color:#334155;text-align:justify;"><span leaf="">我是 飞叔，一个希望用 AI 解决现实问题的实践者。</span></p>
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.8;color:#334155;text-align:justify;">
+        <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+        <strong style="color:#0F172A;"><span leaf="">点赞、在看、转发</span></strong>
+        <span leaf="">三连，我们下篇见。</span>
+      </p>
+      <p style="margin:0;font-size:13px;line-height:1.8;color:#64748B;text-align:justify;"><span leaf="">老规矩：AI 整理素材，飞叔定稿。三层架构里最上面那层「人的判断」，目前还没法外包。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 底部卡片 ===== -->
+  <section style="padding:0 10px;">
+    <section style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:2px;padding:20px 16px;text-align:center;">
+      <p style="font-size:13px;font-weight:700;color:#0F172A;line-height:1.6;margin:0 0 14px;">
+        <span leaf="">如果对你有帮助，欢迎</span>
+        <span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">点赞、在看、转发</span></span>
+        <span leaf="">，让更多人看到</span>
+      </p>
+      <p style="margin:0;font-size:10px;color:#94A3B8;letter-spacing:2px;font-weight:500;">
+        <span leaf="">飞叔AI沉思录 · BLOOM BLUE</span>
+      </p>
+    </section>
+  </section>
+
+</section>
+<!-- /gzh-body -->
+</body>
+</html>

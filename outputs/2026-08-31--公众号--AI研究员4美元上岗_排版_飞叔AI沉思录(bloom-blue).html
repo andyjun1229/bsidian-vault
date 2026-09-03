@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究员 $4/小时上岗，而我先让 AI 拷问了我自己 · 飞叔AI沉思录</title>
+</head>
+<body style="margin:0;padding:24px 0;background:#F1F5F9;">
+<!-- 预览外壳：发布时只复制 <section class="gzh-body"> 内部内容到公众号编辑器 -->
+
+<section class="gzh-body" style="max-width:677px;margin:0 auto;padding:8px;box-sizing:border-box;background:#FFFFFF;color:#334155;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;line-height:1.8;letter-spacing:0.2px;">
+
+  <!-- ===== 头图卡片 ===== -->
+  <section style="margin:0 0 36px;border-radius:2px;overflow:hidden;">
+    <section style="background:#0F172A;padding:32px 24px 24px;">
+      <section style="display:flex;align-items:center;gap:8px;margin-bottom:20px;">
+        <span style="font-size:10px;font-weight:700;letter-spacing:3px;color:#38BDF8;"><span leaf="">飞叔AI沉思录</span></span>
+        <span style="flex:1;height:1px;background:#1E293B;display:inline-block;overflow:hidden;vertical-align:middle;font-size:0;line-height:0;"><span leaf="">&nbsp;</span></span>
+        <span style="font-size:10px;color:#64748B;font-weight:500;"><span leaf="">2026-08-31</span></span>
+      </section>
+      <p style="margin:0 0 16px;font-size:25px;font-weight:800;color:#FFFFFF;line-height:1.35;letter-spacing:0.5px;"><span leaf="">AI 研究员 $4/小时上岗，而我先让 AI 拷问了我自己</span></p>
+      <section style="height:1px;background:#1E293B;margin:0 0 14px;"><span leaf=""><br></span></section>
+      <section style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+        <p style="margin:0;font-size:11px;color:#94A3B8;"><span leaf="">Anthropic 新研究 × 我的自我访谈实操：同一个故事的两面</span></p>
+        <span style="display:inline-block;background:#1E293B;color:#38BDF8;padding:2px 8px;border-radius:2px;font-size:9px;font-weight:700;letter-spacing:1px;"><span leaf="">AI · 自我访谈</span></span>
+      </section>
+    </section>
+  </section>
+
+  <!-- ===== 本文看点 ===== -->
+  <section style="padding:0 10px;margin:0 0 36px;">
+    <p style="font-size:10px;color:#64748B;margin:0 0 14px;letter-spacing:2px;font-weight:600;"><span leaf="">本文看点</span></p>
+    <section style="display:flex;gap:8px;">
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">Claude 当研究员：$4 跑赢 $150 的人类</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">两张研究闭环图，结构一模一样</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0;line-height:1.5;"><span leaf="">今天就能抄的玩法：让 AI 研究你</span></p>
+      </section>
+    </section>
+  </section>
+
+  <!-- ===== 开篇 ===== -->
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">Anthropic 前几天发了份研究，标题很平淡，内容很炸：《自动化研究员能够有效缓解 AI 对齐失败》。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">翻译一下：他们把 Claude 送进了实验室，让它当研究员。基于 Claude Opus 4.8 搭了一套叫 AAR 的系统，给它一个 AI 安全问题，它自己查论文、找方法、提方案、造数据、微调模型、跑测试——从提出假设到完成验证，一套完整的研究闭环。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">效果：</span><span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">10 类 AI 安全问题全部找到改进方案，部分任务干得比 28 名人类安全研究员还好。</span></span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">成本：</span><span style="background:#FDE68A;padding:0 4px;border-radius:2px;font-weight:700;color:#0F172A;"><span leaf="">一小时 4 美元。人类研究员一小时 150 美元。</span></span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">一轮训练 30 分钟，效果不好就扔，有提升就继续——它像搜索算法一样在自己提出的方案里快速试错。人类只干三件事：出题、给模型、定评分标准。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">更值得盯着看的是另一句话：</span><strong style="color:#0F172A;"><span leaf="">较弱的 Claude，已经开始反向参与训练更强的 Claude。</span></strong><span leaf="">弱模型给强模型当陪练。AI 自己改进自己这件事，从论文里的设想变成了生产线上的工序。</span></p>
+
+  <!-- ===== 01 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">01</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第1章 · MY STORY</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">我的第一反应不是激动，是对照</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">看到这条新闻，我第一反应不是「哇 AI 好强」，而是想起半个月前我干的一件事——</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">我让 AI 拷问了我 4 天。</span></strong></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">事情是这样的：我写了 50 多篇公众号文章讲 AI，做了两个 AI 产品，自认为懂 Agent。然后我搭了一个 AI 教练，规则只有一条：</span><strong style="color:#0F172A;"><span leaf="">在你以为自己懂了的时候，追问到你发现自己没懂。</span></strong></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">第一轮，它问我：「Agent 是什么？精确地说，精确到别人能按你说的把代码写出来。」</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">我卡了 20 分钟。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">「Agent 是能自主完成任务的 AI 系统」——被驳回：「聊天机器人也符合这个定义，区别在哪？」最后逼出来的答案是：流程控制权在谁手里。你推一步它动一步的是聊天机器人，你给目标它自己决定每一步的才是 Agent。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">那 4 天我只过了 1.5 个概念。但我学到的东西，比之前两个月读的几十篇文章加起来都多。</span></p>
+
+  <!-- ===== 02 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">02</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第2章 · SAME LOOP</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">这两件事是同一个故事的两面</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">Claude 当研究员，是 AI 面对</span><strong style="color:#0F172A;"><span leaf="">外部问题</span></strong><span leaf="">的研究闭环：查资料→提方案→跑实验→验证。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">我让 AI 拷问我，是 AI 面对</span><strong style="color:#0F172A;"><span leaf="">我这个人</span></strong><span leaf="">的研究闭环：提问→听回答→追问→暴露漏洞。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">结构一模一样。差别只在于验证对象。</span></span><span leaf="">一个验证模型的安全方案，一个验证我对 Agent 的理解。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">所以当有人问我「AI 会不会取代研究员」，我的答案有点反直觉：</span><strong style="color:#0F172A;"><span leaf="">Anthropic 这篇论文里最值钱的不是「AI 能干研究」，而是他们证明了「出题 + 定评分标准」这件事可以外包给机器之外的部分——但出题权本身还在人手里。</span></strong></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">Claude 再强，它研究的问题是人给的，评分标准是人定的。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">而我那个拷问我的 AI 教练，最狠的地方也是同一件事：</span><strong style="color:#0F172A;"><span leaf="">问题是从我的知识漏洞里长出来的。</span></strong><span leaf="">它不心软，不给答案，只缩小范围继续问。人类教练看你卡 20 分钟会忍不住说「算了告诉你吧」，它不会。</span></p>
+
+  <!-- ===== 03 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">03</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第3章 · THE REAL GAP</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">$4 和 $150 之间，隔着的不是能力</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">很多人看到 $4 vs $150，算的是账：研究员要失业了。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">我看到的是另一笔账。那 28 名人类研究员没有被取代——他们被</span><strong style="color:#0F172A;"><span leaf="">升维</span></strong><span leaf="">了。他们从「做实验的人」变成了「出题和判卷的人」。Anthropic 的分工写得很清楚：人类负责出题、提供模型和评测标准。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">这就是 AI 时代个人定位的公式：</span><span style="background:#FDE68A;padding:0 4px;border-radius:2px;font-weight:700;color:#0F172A;"><span leaf="">你离「出题和判卷」越近，越安全；你离「查资料和跑实验」越近，越危险。</span></span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">我那 4 天被拷问的经历给了同一个结论的不同版本：AI 可以替你查资料、替你写方案、甚至替你跑实验——但「发现自己哪里没懂」，这一步没人能替你做。AI 能把问题递到你面前，卡住的那 20 分钟，必须你自己憋。</span></p>
+
+  <!-- ===== 04 ===== -->
+  <section style="margin:36px 0 28px;padding:0 10px;">
+    <p style="font-size:48px;font-weight:900;color:#E2E8F0;margin:0;line-height:1;letter-spacing:-2px;"><span leaf="">04</span></p>
+    <section style="margin-top:-6px;">
+      <p style="font-size:10px;color:#38BDF8;font-weight:700;letter-spacing:3px;margin:0 0 4px;"><span leaf="">第4章 · TRY TODAY</span></p>
+      <p style="font-size:20px;font-weight:800;color:#0F172A;margin:0;letter-spacing:0.3px;line-height:1.4;"><span leaf="">一个可以今天就抄的玩法</span></p>
+    </section>
+  </section>
+
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">你不需要 Anthropic 的算力，只需要一个愿意追问的 AI。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">把你想验证的任何能力——投资逻辑、产品方案、甚至你对某个概念的理解——丢给它，附一句规则：「不要教我，不要给答案，只追问，直到我发现自己没真懂。」</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">这就是我那套自我访谈框架的最小版本。我把它做成了完整的产品（DeepTalk Self），63 道题，我自己重做过一遍——第二遍比第一遍痛苦得多，因为第一遍我还能骗自己。</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">$4 一小时的 AI 研究员上岗了。但先别慌着替研究员难过——</span></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><strong style="color:#0F172A;"><span leaf="">先问问自己：上一次被问到说不出话，是什么时候？</span></strong></p>
+  <p style="margin:0px 10px 22px;font-size:15px;line-height:1.9;text-align:justify;color:#334155;letter-spacing:0.3px;"><span leaf="">如果答案是想不起来，那你可能比那位研究员更需要这篇论文的启发：让 AI 从今天开始研究你。</span></p>
+
+  <!-- ===== 参考资料 ===== -->
+  <section style="margin:0 10px 28px;padding:16px;background:#FAFAFA;border:1px solid #E2E8F0;border-radius:2px;">
+    <p style="margin:0 0 8px;font-size:11px;font-weight:700;color:#64748B;letter-spacing:1px;"><span leaf="">参考资料</span></p>
+    <p style="margin:0 0 4px;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">1. Anthropic《自动化研究员能够有效缓解AI对齐失败》（AAR 系统，基于 Claude Opus 4.8）</span></p>
+    <p style="margin:0 0 4px;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">2. 新智元等媒体报道</span></p>
+    <p style="margin:0;font-size:11px;color:#94A3B8;line-height:1.7;"><span leaf="">3. 飞叔实操：《我让 AI 拷问了我 4 天关于 Agent 的知识》</span></p>
+  </section>
+
+  <!-- ===== 作者寄语 ===== -->
+  <section style="padding:0 10px 24px;">
+    <section style="border-top:1px solid #E2E8F0;padding-top:24px;">
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.8;color:#334155;text-align:justify;"><span leaf="">我是 飞叔，一个希望用 AI 解决现实问题的实践者。</span></p>
+      <p style="margin:0 0 14px;font-size:15px;line-height:1.8;color:#334155;text-align:justify;">
+        <span leaf="">如果你觉得今天这篇有收获，欢迎</span>
+        <strong style="color:#0F172A;"><span leaf="">点赞、在看、转发</span></strong>
+        <span leaf="">三连，我们下篇见。</span>
+      </p>
+      <p style="margin:0;font-size:13px;line-height:1.8;color:#64748B;text-align:justify;"><span leaf="">老规矩：AI 整理素材，飞叔定稿。卡住的那 20 分钟，AI 替不了。</span></p>
+    </section>
+  </section>
+
+  <!-- ===== 底部卡片 ===== -->
+  <section style="padding:0 10px;">
+    <section style="background:#FAFAFA;border:1px solid #E2E8F0;border-radius:2px;padding:20px 16px;text-align:center;">
+      <p style="font-size:13px;font-weight:700;color:#0F172A;line-height:1.6;margin:0 0 14px;">
+        <span leaf="">如果对你有帮助，欢迎</span>
+        <span style="border-bottom:2px solid #38BDF8;font-weight:700;color:#0F172A;"><span leaf="">点赞、在看、转发</span></span>
+        <span leaf="">，让更多人看到</span>
+      </p>
+      <p style="margin:0;font-size:10px;color:#94A3B8;letter-spacing:2px;font-weight:500;">
+        <span leaf="">飞叔AI沉思录 · BLOOM BLUE</span>
+      </p>
+    </section>
+  </section>
+
+</section>
+<!-- /gzh-body -->
+</body>
+</html>

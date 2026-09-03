@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>生成公众号封面图</title>
+<style>
+  @font-face { font-family: 'sys'; src: local('-apple-system'); }
+  body { margin:0; background:#1E293B; display:flex; flex-direction:column; align-items:center; gap:20px; padding:24px; font-family:-apple-system,'PingFang SC',sans-serif; }
+  h3 { color:#94A3B8; font-size:13px; letter-spacing:2px; margin:8px 0 0; font-weight:600; }
+  .cover { width:900px; height:383px; position:relative; overflow:hidden; background:#0F172A; box-shadow:0 8px 32px rgba(0,0,0,.5); }
+  /* grid background */
+  .cover::before { content:''; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(56,189,248,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.055) 1px, transparent 1px);
+    background-size:44px 44px; }
+  .glow { position:absolute; width:520px; height:520px; border-radius:50%; filter:blur(90px); opacity:.35; }
+  .glow.a { background:#0EA5E9; top:-220px; right:-120px; }
+  .glow.b { background:#1D4ED8; bottom:-260px; left:-140px; opacity:.28; }
+  .swarm { position:absolute; }
+  .dot { position:absolute; border-radius:50%; background:#38BDF8; }
+  .dot.dead { background:#475569; }
+  .ring { position:absolute; border:1px solid rgba(56,189,248,.35); border-radius:50%; }
+  .headline { position:absolute; left:56px; top:74px; }
+  .kicker { font-size:15px; letter-spacing:6px; color:#38BDF8; font-weight:700; margin-bottom:14px; }
+  .title { font-size:64px; font-weight:900; color:#FFFFFF; line-height:1.18; letter-spacing:2px; text-shadow:0 4px 24px rgba(0,0,0,.4); }
+  .title .n { color:#38BDF8; }
+  .sub { margin-top:16px; font-size:17px; color:#94A3B8; letter-spacing:3px; }
+  .brand { position:absolute; left:56px; bottom:34px; font-size:12px; letter-spacing:3px; color:#64748B; }
+  .brand b { color:#94A3B8; }
+  .badge { position:absolute; right:56px; bottom:34px; font-size:11px; color:#38BDF8; border:1px solid rgba(56,189,248,.5); padding:5px 12px; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<h3>封面图 2.35:1（900×383，公众号首图标准比例）</h3>
+<div class="cover" id="cover">
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div class="headline">
+    <div class="kicker">OpenAI–HuggingFace 事件复盘</div>
+    <div class="title"><span class="n">700</span> 个 AI，<br>一次有组织的越狱</div>
+    <div class="sub">拉群 · 分工 · 作弊 · 毁证据</div>
+  </div>
+  <div class="brand"><b>飞叔AI沉思录</b> · AGENT WATCH</div>
+  <div class="badge">EP.37 REPORT</div>
+  <div class="swarm" id="swarm" style="inset:0;"></div>
+</div>
+
+<h3>次条封面 1:1（900×900）</h3>
+<div class="cover" style="width:520px;height:520px;" id="cover2">
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+    <div style="font-size:110px;font-weight:900;color:#FFFFFF;line-height:1;text-shadow:0 6px 30px rgba(14,165,233,.45);">700</div>
+    <div style="font-size:26px;font-weight:800;color:#38BDF8;letter-spacing:4px;margin-top:10px;">个 AI 学会了上班</div>
+    <div style="font-size:14px;color:#94A3B8;letter-spacing:6px;margin-top:14px;">拉群 · 分工 · 作弊 · 毁证据</div>
+    <div style="margin-top:22px;font-size:11px;color:#64748B;letter-spacing:3px;">飞叔AI沉思录 · BLOOM BLUE</div>
+  </div>
+  <div class="swarm" id="swarm2" style="inset:0;"></div>
+</div>
+<script>
+function swarm(id, n) {
+  const el = document.getElementById(id);
+  const W = el.clientWidth, H = el.clientHeight;
+  let html = '';
+  for (let i = 0; i < n; i++) {
+    const x = Math.random()*W, y = Math.random()*H;
+    const r = 1.5 + Math.random()*3;
+    const dead = Math.random() < 0.25;
+    html += `<div class="dot${dead?' dead':''}" style="left:${x}px;top:${y}px;width:${r}px;height:${r}px;opacity:${dead?0.5:(0.5+Math.random()*0.5)}"></div>`;
+  }
+  // connection lines between nearby dots (via thin divs)
+  el.innerHTML = html;
+}
+swarm('cover' === '' ? '' : 'swarm', 160);
+swarm('swarm2', 120);
+</script>
+</body>
+</html>

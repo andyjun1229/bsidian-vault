@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>生成公众号封面图 · WikiSkill</title>
+<style>
+  body { margin:0; background:#1E293B; display:flex; flex-direction:column; align-items:center; gap:20px; padding:24px; font-family:-apple-system,'PingFang SC',sans-serif; }
+  h3 { color:#94A3B8; font-size:13px; letter-spacing:2px; margin:8px 0 0; font-weight:600; }
+  .cover { width:900px; height:383px; position:relative; overflow:hidden; background:#0F172A; box-shadow:0 8px 32px rgba(0,0,0,.5); }
+  .cover::before { content:''; position:absolute; inset:0;
+    background-image:linear-gradient(rgba(56,189,248,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(56,189,248,.05) 1px, transparent 1px);
+    background-size:44px 44px; }
+  .glow { position:absolute; border-radius:50%; filter:blur(90px); }
+  .glow.a { background:#0EA5E9; width:480px; height:480px; top:-200px; right:-100px; opacity:.3; }
+  .glow.b { background:#10B981; width:420px; height:420px; bottom:-220px; left:-120px; opacity:.22; }
+  /* three layers */
+  .layers { position:absolute; right:64px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:14px; }
+  .layer { border:1px solid rgba(56,189,248,.55); border-radius:6px; padding:12px 20px; background:rgba(15,23,42,.85); min-width:190px; }
+  .layer .nm { font-size:13px; font-weight:800; color:#FFFFFF; letter-spacing:1px; }
+  .layer .ds { font-size:10px; color:#38BDF8; letter-spacing:2px; margin-top:3px; }
+  .layer.l2 { border-color:#FDE68A; box-shadow:0 0 24px rgba(253,230,138,.15); }
+  .layer.l2 .ds { color:#FDE68A; }
+  .arrow { color:#38BDF8; font-size:14px; text-align:center; line-height:1; opacity:.8; }
+  .headline { position:absolute; left:56px; top:70px; }
+  .kicker { font-size:14px; letter-spacing:5px; color:#38BDF8; font-weight:700; margin-bottom:14px; }
+  .title { font-size:52px; font-weight:900; color:#FFFFFF; line-height:1.22; letter-spacing:1px; }
+  .title .hl { color:#38BDF8; }
+  .sub { margin-top:14px; font-size:16px; color:#94A3B8; letter-spacing:2px; line-height:1.7; }
+  .sub b { color:#FDE68A; font-weight:700; }
+  .brand { position:absolute; left:56px; bottom:30px; font-size:12px; letter-spacing:3px; color:#64748B; }
+  .brand b { color:#94A3B8; }
+  .badge { position:absolute; right:56px; bottom:30px; font-size:11px; color:#38BDF8; border:1px solid rgba(56,189,248,.5); padding:5px 12px; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<h3>封面图 2.35:1（900×383）</h3>
+<div class="cover">
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div class="headline">
+    <div class="kicker">GOOGLE WIKISKILL 深度解读</div>
+    <div class="title">9B + 知识库<br>跑赢了 <span class="hl">27B</span></div>
+    <div class="sub">Agent 持续变强的底层逻辑：<br>不是更大的模型，是<b>让技能从知识里生长</b></div>
+  </div>
+  <div class="layers">
+    <div class="layer"><div class="nm">Skills Layer</div><div class="ds">可执行技能 · 带溯源</div></div>
+    <div class="arrow">↑</div>
+    <div class="layer l2"><div class="nm">Wiki Layer</div><div class="ds">知识沉淀 · 永不回滚</div></div>
+    <div class="arrow">↑</div>
+    <div class="layer"><div class="nm">Raw Layer</div><div class="ds">原始轨迹 · 只进不改</div></div>
+  </div>
+  <div class="brand"><b>飞叔AI沉思录</b> · AGENT WATCH</div>
+  <div class="badge">arXiv 2608.27454</div>
+</div>
+
+<h3 style="margin-top:32px;">次条封面 1:1（520×520）</h3>
+<div class="cover" style="width:520px;height:520px;">
+  <div class="glow a"></div>
+  <div class="glow b"></div>
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 30px;box-sizing:border-box;">
+    <div style="font-size:15px;letter-spacing:5px;color:#38BDF8;font-weight:700;margin-bottom:18px;">WIKISKILL 深度解读</div>
+    <div style="font-size:34px;font-weight:900;color:#FFFFFF;line-height:1.35;">三层知识架构<br>让 Agent 自己进化</div>
+    <div style="margin:22px 0;display:flex;flex-direction:column;gap:8px;align-items:center;">
+      <div style="border:1px solid rgba(253,230,138,.6);border-radius:5px;padding:6px 22px;font-size:13px;color:#FDE68A;letter-spacing:2px;">知识 · 永不回滚</div>
+      <div style="border:1px solid rgba(56,189,248,.5);border-radius:5px;padding:6px 22px;font-size:13px;color:#38BDF8;letter-spacing:2px;">技能 · 从知识生长</div>
+      <div style="border:1px solid rgba(148,163,184,.5);border-radius:5px;padding:6px 22px;font-size:13px;color:#94A3B8;letter-spacing:2px;">经验 · 事实为据</div>
+    </div>
+    <div style="font-size:12px;color:#64748B;letter-spacing:3px;">飞叔AI沉思录 · BLOOM BLUE</div>
+  </div>
+</div>
+</body>
+</html>

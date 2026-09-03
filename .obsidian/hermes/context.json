@@ -1,17 +1,44 @@
 {
   "schemaVersion": 1,
   "source": "lean-obsidian-terminal",
-  "vaultPath": "/Users/mac/Documents/Obsidian Vault",
-  "bridgePath": "/Users/mac/Documents/Obsidian Vault/.obsidian/hermes/context.json",
-  "updatedAt": "2026-08-28T06:04:40.634Z",
-  "updateTimestamp": 1787897080634,
-  "submitSequence": 19,
+  "vaultPath": "/Users/pilot/Documents/bsidian-vault",
+  "bridgePath": "/Users/pilot/Documents/bsidian-vault/.obsidian/hermes/context.json",
+  "updatedAt": "2026-08-29T03:32:11.883Z",
+  "updateTimestamp": 1787974331883,
+  "submitSequence": 8,
   "attach": {
-    "enabled": false
+    "enabled": true
   },
   "terminal": {
-    "id": "terminal-2",
-    "title": "Hermes 1"
+    "id": "terminal-4",
+    "title": "Hermes 4"
   },
-  "context": null
+  "context": {
+    "type": "cursor",
+    "source": "cached",
+    "file": {
+      "path": "CLAUDE.md",
+      "absolutePath": "/Users/pilot/Documents/bsidian-vault/CLAUDE.md",
+      "name": "CLAUDE.md",
+      "basename": "CLAUDE"
+    },
+    "cursor": {
+      "line": 0,
+      "column": 0
+    },
+    "currentLine": "# 个人知识库运行手册",
+    "beforeLines": [],
+    "afterLines": [
+      {
+        "line": 1,
+        "text": ""
+      },
+      {
+        "line": 2,
+        "text": "raw → you → outputs 三级知识加工系统。不是文件夹，是流水线。"
+      }
+    ],
+    "charCount": 51,
+    "truncated": false
+  }
 }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>三方块布局对比：横滑版 vs 恢复版（bloom-blue 主题）</title>
+<style>
+  body { margin:0; background:#F1F5F9; font-family:-apple-system,'PingFang SC',sans-serif; padding:28px 16px 60px; }
+  h2 { max-width:677px; margin:36px auto 6px; font-size:16px; color:#0F172A; }
+  p.desc { max-width:677px; margin:0 auto 18px; font-size:13px; color:#64748B; line-height:1.7; }
+  .frame { max-width:677px; margin:0 auto 8px; background:#FFF; border:1px solid #E2E8F0; border-radius:4px; padding:8px; box-sizing:border-box; }
+</style>
+</head>
+<body>
+
+<h2>❌ 现在的版本：横滑条（overflow + nowrap，三块挤在一行）</h2>
+<p class="desc">特征：外层 <code>overflow: auto hidden; white-space: nowrap</code>，方块 <code>display:inline-block; width:132px; height:90px</code>。为了塞进一屏牺牲了内容——副标题被压缩，手机上要横向滑动，第二、三块被裁出可视区。</p>
+<div class="frame">
+  <section style="width:100%;box-sizing:border-box;overflow:auto hidden;white-space:nowrap;padding:0 0 9px;"><section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0 8px 0 0;border-radius:12px;background:linear-gradient(135deg,#2563EB,#3B82F6);border:1px solid #2563EB;"><p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#BFDBFE;font-weight:800;letter-spacing:1px;"><span leaf="">PART 01</span></p><p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#FFF;font-weight:900;"><span leaf="">发布拆解</span></p><p style="margin:0;font-size:10px;line-height:1.35;color:#DBEAFE;"><span leaf="">770B、49B、1M</span></p></section><section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0 8px 0 0;border-radius:12px;background:#FFF;border:1px solid #DFE8F4;"><p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#9AAAC0;font-weight:800;letter-spacing:1px;"><span leaf="">PART 02</span></p><p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#111827;font-weight:900;"><span leaf="">四场景实测</span></p><p style="margin:0;font-size:10px;line-height:1.35;color:#8797AD;"><span leaf="">研报、展馆与游戏</span></p></section><section style="display:inline-block;vertical-align:top;white-space:normal;width:132px;height:90px;box-sizing:border-box;padding:13px 12px;margin:0;border-radius:12px;background:#FFF;border:1px solid #DFE8F4;"><p style="margin:0 0 6px;font-size:9px;line-height:1.2;color:#9AAAC0;font-weight:800;letter-spacing:1px;"><span leaf="">PART 03</span></p><p style="margin:0 0 4px;font-size:14px;line-height:1.25;color:#111827;font-weight:900;"><span leaf="">独立交付</span></p><p style="margin:0;font-size:10px;line-height:1.35;color:#8797AD;"><span leaf="">模型 × 产品 × 工作流</span></p></section></section>
+</div>
+
+<h2 style="margin-top:44px;">✅ 调回的版本：标准三栏（bloom-blue「本文看点」组件，flex:1 等分自适应）</h2>
+<p class="desc">特征：外层 <code>display:flex; gap:8px</code>，每个方块 <code>flex:1</code>。<strong>这就是你 bloom-blue 主题的「本文看点」组件</strong>——三块等分、自动撑满一行，无需横滑，副标题完整可读，手机上也稳（公众号编辑器对 flex 支持良好，你之前 3 篇文章都用它发过）。</p>
+<div class="frame">
+  <section style="padding:0 10px;margin:0 0 36px;">
+    <p style="font-size:10px;color:#64748B;margin:0 0 14px;letter-spacing:2px;font-weight:600;"><span leaf="">3 PARTS · CONTENT MAP</span></p>
+    <section style="display:flex;gap:8px;">
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">PART 01</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0 0 4px;line-height:1.5;"><span leaf="">发布拆解</span></p>
+        <p style="font-size:11px;color:#64748B;margin:0;line-height:1.5;"><span leaf="">770B、49B、1M</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">PART 02</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0 0 4px;line-height:1.5;"><span leaf="">四场景实测</span></p>
+        <p style="font-size:11px;color:#64748B;margin:0;line-height:1.5;"><span leaf="">研报、展馆与游戏</span></p>
+      </section>
+      <section style="flex:1;border-top:2px solid #0F172A;padding:14px 10px 12px;background:#FAFAFA;">
+        <p style="font-size:10px;color:#94A3B8;font-weight:600;margin:0 0 6px;letter-spacing:1px;"><span leaf="">PART 03</span></p>
+        <p style="font-size:13px;font-weight:700;color:#0F172A;margin:0 0 4px;line-height:1.5;"><span leaf="">独立交付</span></p>
+        <p style="font-size:11px;color:#64748B;margin:0;line-height:1.5;"><span leaf="">模型 × 产品 × 工作流</span></p>
+      </section>
+    </section>
+  </section>
+</div>
+
+</body>
+</html>
