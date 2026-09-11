@@ -1,0 +1,115 @@
+{
+  "nodes": [
+    {
+      "id": "input_node",
+      "type": "text",
+      "x": -560,
+      "y": -80,
+      "width": 340,
+      "height": 220,
+      "color": "6",
+      "text": "## 输入端\n- 飞书转发\n- 手动输入\n- 对话记录\n- 每日爆款情报 cron"
+    },
+    {
+      "id": "hermes_node",
+      "type": "text",
+      "x": -120,
+      "y": -60,
+      "width": 240,
+      "height": 180,
+      "color": "1",
+      "text": "### Hermes\n调度中枢\n\nAI Agent 读写、分类、加工"
+    },
+    {
+      "id": "raw_node",
+      "type": "text",
+      "x": 240,
+      "y": -220,
+      "width": 300,
+      "height": 160,
+      "color": "5",
+      "text": "## raw/\n外部素材库（只进不改）\n82 篇"
+    },
+    {
+      "id": "you_node",
+      "type": "text",
+      "x": 240,
+      "y": -20,
+      "width": 300,
+      "height": 160,
+      "color": "4",
+      "text": "## you/\n个人知识图谱（核心资产）\n168 篇"
+    },
+    {
+      "id": "outputs_node",
+      "type": "text",
+      "x": 660,
+      "y": -120,
+      "width": 320,
+      "height": 200,
+      "color": "2",
+      "text": "## outputs/\n导航索引 + 公众号文章\n索引卡片 → __catalog.md"
+    },
+    {
+      "id": "validate_node",
+      "type": "text",
+      "x": 240,
+      "y": 200,
+      "width": 300,
+      "height": 140,
+      "color": "6",
+      "text": "### 校验 + 遗忘\nvalidate_entry\n30 天不碰 → stale"
+    }
+  ],
+  "edges": [
+    {
+      "id": "e_input_hermes",
+      "fromNode": "input_node",
+      "fromSide": "right",
+      "toNode": "hermes_node",
+      "toSide": "left",
+      "label": "素材流入"
+    },
+    {
+      "id": "e_hermes_raw",
+      "fromNode": "hermes_node",
+      "fromSide": "right",
+      "toNode": "raw_node",
+      "toSide": "left",
+      "label": "外部素材"
+    },
+    {
+      "id": "e_hermes_you",
+      "fromNode": "hermes_node",
+      "fromSide": "right",
+      "toNode": "you_node",
+      "toSide": "left",
+      "label": "思想产物"
+    },
+    {
+      "id": "e_raw_out",
+      "fromNode": "raw_node",
+      "fromSide": "right",
+      "toNode": "outputs_node",
+      "toSide": "top",
+      "label": "被引用"
+    },
+    {
+      "id": "e_you_out",
+      "fromNode": "you_node",
+      "fromSide": "right",
+      "toNode": "outputs_node",
+      "toSide": "bottom",
+      "label": "长成文章"
+    },
+    {
+      "id": "e_validate_you",
+      "fromNode": "validate_node",
+      "fromSide": "top",
+      "toNode": "you_node",
+      "toSide": "bottom",
+      "color": "6",
+      "label": "校验回写"
+    }
+  ]
+}

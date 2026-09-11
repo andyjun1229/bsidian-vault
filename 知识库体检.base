@@ -1,0 +1,39 @@
+filters:
+  and:
+    - file.inFolder("you")
+    - file.ext == "md"
+formulas:
+  age_days: '(now() - file.mtime).days.round(0)'
+  health: 'if((now() - file.mtime).days > 30, "⚠️ 30天未动", "✅ 活跃")'
+views:
+  - type: table
+    name: 全部笔记
+    order:
+      - file.name
+      - type
+      - status
+      - formula.health
+      - formula.age_days
+  - type: table
+    name: 遗忘预警（30天未动的 method/article）
+    filters:
+      and:
+        - formula.age_days > 30
+        - 'status != "stale"'
+        - or:
+            - 'type == "method"'
+            - 'type == "article"'
+    order:
+      - file.name
+      - type
+      - status
+      - formula.age_days
+  - type: cards
+    name: 灵感卡片
+    filters:
+      and:
+        - file.inFolder("you/灵感")
+    order:
+      - file.name
+      - status
+      - formula.age_days
