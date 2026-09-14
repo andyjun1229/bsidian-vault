@@ -1,11 +1,12 @@
 ---
 来源: 公众号
-链接: [我养了一个AI虾（OpenClaw）后，想明白了三件事](https://mp.weixin.qq.com/s/msuH6G66HYKUvJtppAJxag)
+链接: "[我养了一个AI虾（OpenClaw）后，想明白了三件事](https://mp.weixin.qq.com/s/msuH6G66HYKUvJtppAJxag)"
 时间: 2026-03-20
 平台: 公众号
 type: article
 
-status: growing---
+status: growing
+---
 
 开头：一个被忽略的真相
 最近，我一直在“养虾”。

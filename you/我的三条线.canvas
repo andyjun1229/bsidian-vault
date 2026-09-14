@@ -1,0 +1,14 @@
+{
+  "nodes": [
+    {"id": "n1", "type": "text", "text": "## PAIR2026 论文\n慢规划+快反馈：李飞飞 Atlas、世界模型综述都在这个战场", "x": -300, "y": -160, "width": 340, "height": 160, "color": "5"},
+    {"id": "n2", "type": "text", "text": "## 儿子的信奥班\nvibe coding 一小时做游戏→AI 抹平创造门槛", "x": 80, "y": -160, "width": 300, "height": 160, "color": "1"},
+    {"id": "n3", "type": "text", "text": "## 数据安全培训\nAI 啃物理世界硬骨头时代的安全底座", "x": 80, "y": 60, "width": 300, "height": 140, "color": "4"},
+    {"id": "n4", "type": "text", "text": "## 公众号《飞叔AI沉思录》\n两条内容线：物理世界最后一公里 / 教育变革", "x": -110, "y": 240, "width": 320, "height": 140, "color": "6"}
+  ],
+  "edges": [
+    {"id": "e1", "fromNode": "n1", "fromSide": "right", "toNode": "n2", "toSide": "left", "label": "都是 AI 走向物理世界"},
+    {"id": "e2", "fromNode": "n1", "fromSide": "bottom", "toNode": "n4", "toSide": "top", "label": "写成了文章"},
+    {"id": "e3", "fromNode": "n2", "fromSide": "bottom", "toNode": "n4", "toSide": "right", "label": "写成了文章"},
+    {"id": "e4", "fromNode": "n3", "fromSide": "top", "toNode": "n1", "toSide": "bottom", "label": "安全是前提"}
+  ]
+}
