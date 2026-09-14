@@ -24,3 +24,4 @@ env/
 
 # Backups
 Obsidian Vault备份-*
+.sync_vault.log
