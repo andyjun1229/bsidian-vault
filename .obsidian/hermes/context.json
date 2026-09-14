@@ -1,44 +1,17 @@
 {
   "schemaVersion": 1,
   "source": "lean-obsidian-terminal",
-  "vaultPath": "/Users/pilot/Documents/bsidian-vault",
-  "bridgePath": "/Users/pilot/Documents/bsidian-vault/.obsidian/hermes/context.json",
-  "updatedAt": "2026-08-29T03:32:11.883Z",
-  "updateTimestamp": 1787974331883,
-  "submitSequence": 8,
+  "vaultPath": "/Users/mac/Documents/Obsidian Vault",
+  "bridgePath": "/Users/mac/Documents/Obsidian Vault/.obsidian/hermes/context.json",
+  "updatedAt": "2026-09-14T02:51:22.001Z",
+  "updateTimestamp": 1789354282001,
+  "submitSequence": 4,
   "attach": {
-    "enabled": true
+    "enabled": false
   },
   "terminal": {
-    "id": "terminal-4",
+    "id": "terminal-3",
     "title": "Hermes 4"
   },
-  "context": {
-    "type": "cursor",
-    "source": "cached",
-    "file": {
-      "path": "CLAUDE.md",
-      "absolutePath": "/Users/pilot/Documents/bsidian-vault/CLAUDE.md",
-      "name": "CLAUDE.md",
-      "basename": "CLAUDE"
-    },
-    "cursor": {
-      "line": 0,
-      "column": 0
-    },
-    "currentLine": "# 个人知识库运行手册",
-    "beforeLines": [],
-    "afterLines": [
-      {
-        "line": 1,
-        "text": ""
-      },
-      {
-        "line": 2,
-        "text": "raw → you → outputs 三级知识加工系统。不是文件夹，是流水线。"
-      }
-    ],
-    "charCount": 51,
-    "truncated": false
-  }
+  "context": null
 }
