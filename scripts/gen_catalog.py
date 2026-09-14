@@ -9,7 +9,7 @@
 import os
 import datetime
 
-VAULT = os.path.expanduser("~/Documents/Obsidian Vault")
+VAULT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 YOU_DIR = os.path.join(VAULT, "you")
 OUTPUTS_DIR = os.path.join(VAULT, "outputs")
 CATALOG = os.path.join(OUTPUTS_DIR, "__catalog.md")

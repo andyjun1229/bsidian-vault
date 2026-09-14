@@ -315,6 +315,7 @@ done
 - **raw/ 里的"平台：自己创作"是旧架构遗留。** 看到就搬去 you/。
 - **批量加元数据不要追加 frontmatter。** 有 frontmatter 的文件在原有块内插入 type/status。追加会导致两个 frontmatter 块，解析错误。
 - **大动作用 execute_code 不用 terminal。** `rm -rf` 和 `mv` 目录会被安全拦截。`shutil.move()` 在 execute_code 里可用。
+- **vault 脚本禁止硬编码机器路径。** 两台电脑（本机 `~/Documents/Obsidian Vault`、家里 `~/Documents/bsidian-vault`）共用 GitHub 仓库，scripts/ 下的脚本必须用 `os.path.dirname(__file__)/..` 自动定位 vault，写死任何一台的路径都会在另一台炸。
 - **30 秒记录规则不是建议是流程。** 你听了就用，30 秒记一条 experience，我会自动关联。
 - **30 天遗忘不是删除，是标记 stale。** 知识会过期，旧观点和新观点共存时要有标记区分。
 - **口述灵感保留原话。** 只去口头禅、理语序，不做AI腔改写；拿不准的地方标（待确认）。

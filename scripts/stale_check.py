@@ -16,7 +16,7 @@ import re
 import sys
 import time
 
-VAULT = os.path.expanduser("~/Documents/Obsidian Vault")
+VAULT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 YOU = os.path.join(VAULT, "you")
 
 FM_RE = re.compile(r"^---\s*\n(.*?)\n---", re.DOTALL)
