@@ -5,8 +5,7 @@
 平台: 公众号
 type: method
 
-status: growing
----
+status: growing---
 
 前言
 

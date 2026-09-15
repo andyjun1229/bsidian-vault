@@ -5,7 +5,7 @@ tags: [投资, 方法论, 选股, 供应链, 蒸馏]
 source:
   - GitHub: https://github.com/muxuuu/serenity-skill (⭐3565)
   - GitHub: https://github.com/fadewalk/serenity-stock-choke (⭐147)
-  - "X/Twitter: @aleabitoreddit (Serenity)"
+  - X/Twitter: @aleabitoreddit (Serenity)
   - raw/2026-07-20--GitHub--serenity-skill-README供应链瓶颈选股.md
   - raw/2026-07-20--GitHub--serenity-stock-choke-A股卡脖子选股框架.md
   - raw/2026-07-20--GitHub--serenity-skill-SKILL完整工作流.md

@@ -5,8 +5,7 @@
 平台: 公众号
 type: method
 
-status: growing
----
+status: growing---
 
 上周我让 DeepSeek 帮我写个脚本，批量处理 100 个 JSON 文件。
 
