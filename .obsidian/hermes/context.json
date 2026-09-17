@@ -1,53 +1,17 @@
 {
   "schemaVersion": 1,
   "source": "lean-obsidian-terminal",
-  "vaultPath": "/Users/pilot/Documents/bsidian-vault",
-  "bridgePath": "/Users/pilot/Documents/bsidian-vault/.obsidian/hermes/context.json",
-  "updatedAt": "2026-09-16T14:06:33.206Z",
-  "updateTimestamp": 1789567593206,
-  "submitSequence": 15,
+  "vaultPath": "/Users/mac/Documents/Obsidian Vault",
+  "bridgePath": "/Users/mac/Documents/Obsidian Vault/.obsidian/hermes/context.json",
+  "updatedAt": "2026-09-17T00:50:37.158Z",
+  "updateTimestamp": 1789606237158,
+  "submitSequence": 64,
   "attach": {
-    "enabled": true
+    "enabled": false
   },
   "terminal": {
-    "id": "terminal-4",
+    "id": "terminal-3",
     "title": "Hermes 4"
   },
-  "context": {
-    "type": "cursor",
-    "source": "cached",
-    "file": {
-      "path": "you/2026-09-15--method--零门槛自我访谈包豆包版.md",
-      "absolutePath": "/Users/pilot/Documents/bsidian-vault/you/2026-09-15--method--零门槛自我访谈包豆包版.md",
-      "name": "2026-09-15--method--零门槛自我访谈包豆包版.md",
-      "basename": "2026-09-15--method--零门槛自我访谈包豆包版"
-    },
-    "cursor": {
-      "line": 5,
-      "column": 0
-    },
-    "currentLine": "",
-    "beforeLines": [
-      {
-        "line": 3,
-        "text": "tags: [AI实操, 自我访谈, 公众号]"
-      },
-      {
-        "line": 4,
-        "text": "---"
-      }
-    ],
-    "afterLines": [
-      {
-        "line": 6,
-        "text": "# 零门槛自我访谈包（豆包版）· 知识库存档"
-      },
-      {
-        "line": 7,
-        "text": ""
-      }
-    ],
-    "charCount": 48,
-    "truncated": false
-  }
+  "context": null
 }
