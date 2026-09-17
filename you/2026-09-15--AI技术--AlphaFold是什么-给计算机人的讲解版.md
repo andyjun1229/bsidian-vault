@@ -1,3 +1,9 @@
+---
+type: note
+status: growing
+tags: [AI技术]
+---
+
 # AlphaFold 是什么——给计算机人的讲解版
 
 > 结合你的计算机背景讲，避开纯生物术语。

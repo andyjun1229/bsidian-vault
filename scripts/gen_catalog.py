@@ -3,13 +3,14 @@
 只读取 frontmatter，不读正文，速度很快。
 递归扫描 you/ 及其子目录（如 you/灵感/），跳过 _ 开头的文件和隐藏目录。
 
-用法: python3 ~/Documents/bsidian-vault/scripts/gen_catalog.py
+用法: python3 <vault>/scripts/gen_catalog.py（路径自动定位，两台机器通用）
 """
 
 import os
 import datetime
 
-VAULT = os.path.expanduser("~/Documents/bsidian-vault")
+# 自动定位 vault 根目录（脚本在 <vault>/scripts/ 下）——禁止硬编码任何一台机器的路径
+VAULT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 YOU_DIR = os.path.join(VAULT, "you")
 OUTPUTS_DIR = os.path.join(VAULT, "outputs")
 CATALOG = os.path.join(OUTPUTS_DIR, "__catalog.md")

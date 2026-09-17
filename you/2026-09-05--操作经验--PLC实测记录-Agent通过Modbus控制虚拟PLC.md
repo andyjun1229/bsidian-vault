@@ -1,3 +1,9 @@
+---
+type: experience
+status: growing
+tags: [AI实操, 操作经验]
+---
+
 # PLC 实测记录：Agent 通过 Modbus TCP 控制虚拟 PLC（2026-09-05）
 
 > 结论先行：**Agent → Modbus TCP → 虚拟PLC 的完整控制链路已跑通**。启停、调速、温控、监测全部实测通过。
