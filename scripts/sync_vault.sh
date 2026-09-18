@@ -12,6 +12,12 @@ CHANGED=0
 
 echo "[$(date '+%F %T')] 同步开始 @ $MACHINE"
 
+# 0. 先提交本地未暂存变更（必须在 pull 之前，否则 rebase 会被卡死）
+git add -A 2>/dev/null
+if ! git diff --cached --quiet; then
+    git commit -m "同步@$MACHINE $(date '+%F %H:%M')" >/dev/null && echo "已提交本地改动"
+fi
+
 # 1. 拉取远端，rebase 到本地之上
 if ! git pull --rebase origin main >/tmp/vault_sync_pull.log 2>&1; then
     # 2. 冲突自动处理：机器特定文件取本地，自动生成文件重新生成
