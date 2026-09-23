@@ -61,9 +61,12 @@ done
 
 # 5. 收尾：catalog 兜底重新生成（合并后可能过期）
 python3 "$VAULT/scripts/gen_catalog.py" >/dev/null 2>&1
-if ! git diff --quiet HEAD 2>/dev/null && ! git diff --cached --quiet; then
-    git add outputs/__catalog.md && git commit -m "目录更新@$MACHINE" >/dev/null 2>&1
-    git push origin main >/dev/null 2>&1
+if ! git diff --quiet HEAD -- outputs/__catalog.md 2>/dev/null; then
+    git add outputs/__catalog.md
+    if ! git diff --cached --quiet; then
+        git commit -m "目录更新@$MACHINE" >/dev/null 2>&1
+        git push origin main >/dev/null 2>&1
+    fi
 fi
 
 if [ $PUSHED -eq 1 ]; then
