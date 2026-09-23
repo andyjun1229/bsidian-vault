@@ -127,8 +127,31 @@ if unknown:
     lines.append("")
 
 
-with open(CATALOG, "w", encoding="utf-8") as f:
-    f.write("\n".join(lines))
+def strip_timestamp(text_lines):
+    """去掉 frontmatter 中的时间戳行，用于内容比对（避免每次运行都产生无意义 diff）。"""
+    return [
+        ln for ln in text_lines
+        if not ln.startswith("自动生成时间:")
+    ]
 
-print(f"✅ 已生成: {CATALOG}")
-print(f"   共 {len(entries)} 条，{len(type_order)} 个分类")
+
+new_content = strip_timestamp(lines)
+
+changed = True
+if os.path.exists(CATALOG):
+    try:
+        with open(CATALOG, "r", encoding="utf-8") as f:
+            old_content = strip_timestamp(f.read().split("\n"))
+        changed = new_content != old_content
+    except OSError:
+        changed = True
+
+if changed:
+    with open(CATALOG, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines))
+    print(f"✅ 已生成: {CATALOG}（内容有变化）")
+    print(f"   共 {len(entries)} 条，{len(type_order)} 个分类")
+else:
+    # 内容无实质变化时不写盘，保持文件 mtime/git 状态干净
+    print(f"✅ 目录无变化，跳过写入: {CATALOG}")
+    print(f"   共 {len(entries)} 条，{len(type_order)} 个分类")
